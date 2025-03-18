@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 * {
     margin: 0;
@@ -12,13 +12,15 @@
   }                                    
 
   :root {
-    --main-color: #033a80;
+    --main-color: #2c3e50;
     --bg-color: #fff;
-    --text-color: #0f0c27;
-    --hover: hsl(260, 100%, 51%);
+    --text-color: #2c3e50;
+    --hover: #3498db;
     --big-font: 3.2rem;
     --medium-font: 1.8rem;
     --p-font: 0.941rem;
+    --accent-color: #e74c3c;
+    --secondary-color: #2ecc71;
   }
   section {
     padding: 50px 10%;
@@ -44,12 +46,18 @@
   }
  
   .heading h2 {
-    font-size: 30px;
+    font-size: 2.5rem;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--main-color);
   }
  
   .heading span {
     font-size: var(--p-font);
-    color: rgb(2, 166, 70);
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
   }
   .heading h2:hover {
    color:hsl(260, 100%, 51%);
@@ -75,15 +83,18 @@
   }
  
   .logo {
-    font-size: 1.61rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 700;
     color: var(--text-color);
+    font-family: "Playfair Display", serif;
+    letter-spacing: 1px;
   }
  
   .logo span {
-    font-size: 1.61rem;
-    font-weight: 600;
-    color: crimson;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    font-family: "Playfair Display", serif;
   }
  
   .navbar {
@@ -91,14 +102,29 @@
   }
  
   .navbar a {
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding: 10px 20px;
     color: var(--text-color);
     font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    transition: all 0.3s ease;
+    position: relative;
   }
  
-  .navbar a:hover {
-    color: var(--hover);
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--hover);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+ 
+  .navbar a:hover::after {
+    width: 80%;
   }
  
   #menu-icon {
@@ -135,10 +161,20 @@
   .home-text span {
     font-size: var(--medium-font);
     font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    color: var(--accent-color);
   }
  
   .home-text h1 {
-    font-size: var(--big-font);
+    font-size: 4rem;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 1rem 0;
+    background: linear-gradient(45deg, var(--main-color), var(--hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
   }
  
   .home-text h1:hover {
@@ -147,18 +183,23 @@
   }
  
   .home-text h2 {
-    font-size: 1.1rem;
-    font-weight: 400;
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 1.5rem;
   }
 
   .home-text h2 span1{
-    color: rgb(2, 166, 70);
+    color: var(--secondary-color);
+    font-weight: 600;
   }
  
   .home-text p {
     font-size: var(--p-font);
     font-weight: 400;
     margin: 0.7rem 0 1rem;
+    line-height: 1.8;
+    color: #666;
   }
  
   .social {
@@ -167,25 +208,32 @@
   }
  
   .social a {
-    margin-bottom: 1rem;
-    font-size: 22px;
+    margin-bottom: 1.5rem;
+    font-size: 24px;
     color: var(--text-color);
+    transition: all 0.3s ease;
+    position: relative;
   }
  
   .social a:hover {
     color: var(--hover);
+    transform: translateY(-3px);
   }
  
   .btn {
     display: inline-block;
-    background: var(--main-color);
+    background: linear-gradient(45deg, var(--main-color), var(--hover));
     color: #fff;
-    padding: 0.7rem 1.3rem;
-    border-radius: 0.5rem;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
  
   .btn:hover {
-    background: var(--hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   }
  
  
@@ -249,13 +297,16 @@
 
 .project_item{
   grid-template-columns: 7fr;
-  border-radius: 0.5rem;
-  border-bottom: 2px solid var(--main-color);
-  box-shadow: 0 2px 7px rgb(14 55 54 / 15%);
+  border-radius: 1rem;
+  border-bottom: 3px solid var(--main-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .project_item:hover {
-  background-color: #02225a;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background-color: var(--main-color);
 }
 
 .project_item:hover li{
@@ -446,20 +497,23 @@ border: 2px solid white;
   }
  
   .skills-box {
-    padding: -10px;
-    width: 100px;
+    padding: 2rem;
+    width: 120px;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border-radius: 0.5rem;
-    border-bottom: 2px solid var(--main-color);
-    box-shadow: 0 2px 7px rgb(14 55 54 / 15%);
+    border-radius: 1rem;
+    border-bottom: 3px solid var(--main-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
   }
  
   .skills-box:hover {
-    background-color: #02225a;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background-color: var(--main-color);
   }
  
   .skills-box h3 {
@@ -562,14 +616,15 @@ border: 2px solid white;
  
   form input,
   textarea {
-    padding: 15px;
-    border-radius: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.8rem;
     width: 100%;
-    border: none;
+    border: 2px solid transparent;
     outline: none;
-    background: hsla(260, 100%, 44%, 0.1);
-    margin-bottom: 1rem;
+    background: rgba(44, 62, 80, 0.05);
+    margin-bottom: 1.5rem;
     color: var(--text-color);
+    transition: all 0.3s ease;
   }
  
   form input::placeholder,
@@ -583,20 +638,23 @@ border: 2px solid white;
   }
   
   .contact-button {
-    width: 160px;
-    height: 40px;
-    border-radius: 1rem;
+    width: 180px;
+    height: 45px;
+    border-radius: 2rem;
     cursor: pointer;
-    background: #2768d9;
+    background: linear-gradient(45deg, var(--main-color), var(--hover));
     color: #fff;
     justify-content: center;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-left: 35%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
  
   .contact-button:hover {
-    background: var(--hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   }
  
   .copyright {
