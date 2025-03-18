@@ -12,3 +12,13 @@ menu.onclick = () => {
 window.onscroll = () => {
   navbar.classList.remove("active");
 };
+
+// Typing Animation
+var typed = new Typed(".typed-text", {
+    strings: ["Software Engineer", "DevOps Engineer", "Cloud Developer"],
+    typeSpeed: 150,
+    backSpeed: 80,
+    loop: true,
+    smartBackspace: true,
+    backDelay: 2000
+});
