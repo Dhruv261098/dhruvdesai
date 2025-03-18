@@ -160,8 +160,6 @@
     position: relative;
     width: 350px;
     height: 350px;
-    border-radius: 50%;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,79 +171,6 @@
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid var(--main-color);
-    transition: all 0.5s ease;
-  }
- 
-  .img-container::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        45deg,
-        transparent,
-        rgba(52, 152, 219, 0.1),
-        transparent
-    );
-    border-radius: 50%;
-    animation: subtle-shine 3s linear infinite;
-    z-index: 2;
-  }
- 
-  .rotate-border {
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 50%;
-    border: 2px solid var(--secondary-color);
-    opacity: 0.5;
-    animation: subtle-pulse 2s ease-in-out infinite;
-  }
- 
-  @keyframes subtle-shine {
-    0% {
-        transform: translateX(-100%) translateY(-100%);
-    }
-    100% {
-        transform: translateX(100%) translateY(100%);
-    }
-  }
- 
-  @keyframes subtle-pulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-    50% {
-        transform: scale(1.02);
-        opacity: 0.3;
-    }
-  }
- 
-  /* Hover effect */
-  .img-container:hover img {
-    transform: scale(1.02);
-  }
- 
-  .img-container:hover .rotate-border {
-    border-color: var(--accent-color);
-  }
- 
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .img-container {
-        width: 280px;
-        height: 280px;
-    }
-  }
- 
-  @media (max-width: 480px) {
-    .img-container {
-        width: 240px;
-        height: 240px;
-    }
   }
  
   .home-text span {
