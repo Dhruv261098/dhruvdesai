@@ -947,17 +947,17 @@ border: 2px solid white;
 }
 
 .typed-text {
-    color: #22cf91;
+    color: var(--secondary-color);
     font-weight: 600;
 }
 
-/* Override Typed.js cursor style */
 .typed-cursor {
-    color: #e74c3c !important;
+    color: var(--accent-color) !important;
     font-weight: 400;
+    font-size: 1.4rem;
 }
 
-/* Remove the old cursor styles */
+/* Remove any existing cursor styles */
 .cursor {
     display: none;
 }
