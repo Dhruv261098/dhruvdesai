@@ -951,20 +951,21 @@ border: 2px solid white;
     font-weight: 600;
 }
 
+/* Override Typed.js cursor style */
+.typed-cursor {
+    color: #e74c3c !important;
+    font-weight: 400;
+}
+
+/* Remove the old cursor styles */
 .cursor {
-    display: inline-block;
-    width: 3px;
-    background-color: var(--text-color);
-    margin-left: 2px;
-    animation: blink 1s infinite;
+    display: none;
 }
 
 @keyframes blink {
-    0% { background-color: var(--text-color); }
-    49% { background-color: var(--text-color); }
-    50% { background-color: transparent; }
-    99% { background-color: transparent; }
-    100% { background-color: var(--text-color); }
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .experience-box {
