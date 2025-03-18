@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 * {
     margin: 0;
@@ -12,9 +12,9 @@
   }                                    
 
   :root {
-    --main-color: #033a80;
-    --bg-color: #fff;
-    --text-color: #0f0c27;
+    --main-color: #6366f1;
+    --bg-color: #f8fafc;
+    --text-color: #1e293b;
     --hover: hsl(260, 100%, 51%);
     --big-font: 3.2rem;
     --medium-font: 1.8rem;
@@ -68,6 +68,10 @@
     transition: 0.2s;
     box-shadow: -3px -3px 7px #ffffff73,
       2px 2px 5px rgba(94, 104, 121, 0.288);
+    background: rgba(255, 255, 255, 0.9); /* Add glass effect */
+    backdrop-filter: blur(10px); /* Add glass effect */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Change shadow to border */
+      
   }
  
   header.shadow {
@@ -83,7 +87,7 @@
   .logo span {
     font-size: 1.61rem;
     font-weight: 600;
-    color: crimson;
+    color: var(--accent-color);
   }
  
   .navbar {
