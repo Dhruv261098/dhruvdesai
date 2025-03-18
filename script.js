@@ -1,15 +1,18 @@
 let header = document.querySelector("header");
-let menu = document.querySelector("#menu-icon");
+let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
   header.classList.toggle("shadow", window.scrollY > 0);
 });
 
-menu.onclick = () => {
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active");
 };
+
 window.onscroll = () => {
+  menuIcon.classList.remove("bx-x");
   navbar.classList.remove("active");
 };
 
@@ -20,5 +23,8 @@ var typed = new Typed(".typed-text", {
     backSpeed: 80,
     loop: true,
     smartBackspace: true,
-    backDelay: 2000
+    backDelay: 2000,
+    startDelay: 500,
+    showCursor: true,
+    cursorChar: '|'
 });
